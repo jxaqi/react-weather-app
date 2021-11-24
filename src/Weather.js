@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Loader from 'react-loader-spinner';
 import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 
@@ -60,9 +59,7 @@ function Weather(props) {
         );
     } else {
         searchCity();
-        return (
-            <Loader type="Rings" color="#fff" height={80} width={80} />
-        );
+        return null;
     }
 }
 
