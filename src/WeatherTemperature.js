@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-export default (props) => {
+function WeatherTemperature(props) {
     const [unit, setUnit] = useState("metrics");
 
-    const toFahrenheit = e => {
-        e.preventDefault();
+    const toFahrenheit = event => {
+        event.preventDefault();
         setUnit("imperial");
     }
 
-    const toCelsius = e => {
-        e.preventDefault();
+    const toCelsius = event => {
+        event.preventDefault();
         setUnit("metrics");
     }
 
@@ -40,3 +40,5 @@ export default (props) => {
         );
     }
 }
+
+export default WeatherTemperature;

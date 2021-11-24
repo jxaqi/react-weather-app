@@ -3,12 +3,12 @@ import WeatherIcon from './WeatherIcon';
 import WeatherTemperature from './WeatherTemperature';
 import WeatherDate from './WeatherDate';
 
-export default (props) => {
+function WeatherInfo(props) {
     return (
         <div className="weatherInfo">
             <div className="row">
                 <div className="col-8">
-                    <h1>{props.data.city}</h1>
+                    <h3>{props.data.city}</h3>
                 </div>
                 <div className="col-4">
                     <WeatherIcon code={props.data.icon} alt={props.data.description} />
@@ -23,7 +23,7 @@ export default (props) => {
                         <li>
                             <WeatherDate date={props.data.date} />
                         </li>
-                        <li>{props.data.description}</li>
+                        <li className="text-capitalize">{props.data.description}</li>
                     </ul>
                 </div>
                 <div className="col-6">
@@ -36,3 +36,5 @@ export default (props) => {
         </div>
     );
 }
+
+export default WeatherInfo;

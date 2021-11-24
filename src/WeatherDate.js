@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (props) => {
+function WeatherDate(props) {
     let days = [
         'Monday',
         'Tuesday',
@@ -26,3 +26,5 @@ export default (props) => {
         </div>
     );
 }
+
+export default WeatherDate;

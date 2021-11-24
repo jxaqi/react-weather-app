@@ -6,56 +6,55 @@ import WeatherForecast from './WeatherForecast';
 
 import './Weather.css';
 
-export default (props) => {
+function Weather(props) {
+    const [weather, setWeather] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
-    const [weatherData, setWeatherData] = useState({ ready: false });
-
-    const displayApp = response => {
-        setWeatherData({
+    
+    const displayApp = result => {
+        setWeather({
             ready: true,
-            city: response.data.name,
-            coordinates: response.data.coord,
-            date: new Date(response.data.dt * 1000),
-            description: response.data.weather[0].description,
-            temperature: response.data.main.temp,
-            humidity: response.data.main.humidity,
-            windspeed: response.data.wind.speed,
-            icon: response.data.weather[0].icon,
+            city: result.data.name,
+            coordinates: result.data.coord,
+            date: new Date(result.data.dt * 1000),
+            description: result.data.weather[0].description,
+            temperature: result.data.main.temp,
+            humidity: result.data.main.humidity,
+            windspeed: result.data.wind.speed,
+            icon: result.data.weather[0].icon,
         });
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit = event => {
+        event.preventDefault();
         searchCity();
     }
 
     const searchCity = () => {
-        const apiKey = "e697c1877f48a82f71267dda2449fba8";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+        const apiKey = "52792a740fc0591b5643f27ca50121b7";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(displayApp);
     }
 
-    const handleCity = e => {
-        setCity(e.target.value);
+    const handleChange = event => {
+        setCity(event.target.value);
     }
 
-    if (weatherData.ready) {
+    if (weather.ready) {
         return (
             <div className="card">
                 <div className="card-header">
-                    Title
-                    <form onSubmit="{handleSubmit}" className="row g-3">
+                    <form onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="col-10">
-                                <input className="form-control" type="text" id="inputCity" placeholder="Seearch for a city" onChange={handleCity}></input>
+                                <input className="form-control" type="text" placeholder="Search for a city" onChange={handleChange}></input>
                             </div>
                             <div className="col-2">
                                 <button className="btn btn-light mb-3" type="submit">Search</button>
                             </div>
                         </div>
                     </form>
-                    <WeatherInfo data={weatherData} />
-                    <WeatherForecast coordinates={weatherData.coordinates} />
+                    <WeatherInfo data={weather} />
+                    <WeatherForecast coordinates={weather.coordinates} />
                 </div>
             </div>
         );
@@ -66,3 +65,5 @@ export default (props) => {
         );
     }
 }
+
+export default Weather;
