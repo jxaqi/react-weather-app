@@ -1,0 +1,49 @@
+.heading {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: 0 !important;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.temperature {
+  font-size: 2.5rem;
+}
+
+.units {
+  vertical-align: top;
+}
+
+.units a {
+  color: #fff !important;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0 !important;
+}
+
+.text-mute {
+  opacity: 0.8;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}

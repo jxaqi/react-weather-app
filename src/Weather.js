@@ -43,17 +43,19 @@ function Weather(props) {
             <div className="card">
                 <div className="card-header">
                     <form onSubmit={handleSubmit}>
-                        <div className="row">
-                            <div className="col-10">
+                        <div className="row mt-2">
+                            <div className="col-7">
                                 <input className="form-control" type="text" placeholder="Search for a city" onChange={handleChange}></input>
                             </div>
-                            <div className="col-2">
+                            <div className="col-3">
                                 <button className="btn btn-light mb-3" type="submit">Search</button>
                             </div>
                         </div>
                     </form>
                     <WeatherInfo data={weather} />
-                    <WeatherForecast coordinates={weather.coordinates} />
+                </div>
+                <div className="card-body">
+                <WeatherForecast coordinates={weather.coordinates} />
                 </div>
             </div>
         );

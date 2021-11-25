@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import "./WeatherInfo.css";
+
 function WeatherTemperature(props) {
     const [unit, setUnit] = useState("metrics");
 
@@ -23,7 +25,7 @@ function WeatherTemperature(props) {
                 <span className="temperature">{Math.round(props.celsius)}</span>
                 <span className="units">
                     {" "} ˚C |{" "}
-                    <a href="/" onClick={toFahrenheit}>˚F</a>
+                    <a href="/" className="text-decoration-none" onClick={toFahrenheit}>˚F</a>
                 </span>
             </span>
         );
@@ -33,7 +35,7 @@ function WeatherTemperature(props) {
                 <span className="temperature">{fahrenheit()}</span>
                 <span className="units">
                     {" "}
-                    <a href="/" onClick={toCelsius}>˚C{" "}</a>
+                    <a href="/" className="text-decoration-none" onClick={toCelsius}>˚C{" "}</a>
                     | ˚F
                 </span>
             </span>
