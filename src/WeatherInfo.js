@@ -1,5 +1,6 @@
 import React from 'react';
 import WeatherTemperature from './WeatherTemperature';
+import WeatherCaption from './WeatherCaption';
 import WeatherDate from './WeatherDate';
 
 import './WeatherInfo.css';
@@ -15,6 +16,9 @@ function WeatherInfo(props) {
                     <img src={"http://openweathermap.org/img/wn/" + props.data.icon + "@2x.png"} alt={props.data.description} />
                     <WeatherTemperature celsius={props.data.temperature} />
                 </div>
+            </div>
+            <div className="row">
+                <em>- <WeatherCaption code={props.data.icon} /></em>   
             </div>
             <div className="row">
                 <div className="col-6">

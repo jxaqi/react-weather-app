@@ -1,9 +1,10 @@
-.heading {
-  margin-bottom: 1rem;
-}
-
 h3 {
   margin-bottom: 0 !important;
+}
+
+em {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
 }
 
 .title {
