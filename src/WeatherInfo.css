@@ -48,3 +48,14 @@ ul {
   display: flex;
   justify-content: right;
 }
+
+/* Media screen */
+@media only screen and (max-width: 369px) {
+  .temperature {
+    font-size: 2rem;
+  }
+  .icon img {
+    width: 30px;
+    height: 30px;
+  }
+}

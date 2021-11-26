@@ -8,7 +8,7 @@ import './Weather.css';
 function Weather(props) {
     const [weather, setWeather] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
-    
+
     const displayApp = result => {
         setWeather({
             ready: true,
@@ -20,6 +20,8 @@ function Weather(props) {
             humidity: result.data.main.humidity,
             windspeed: result.data.wind.speed,
             icon: result.data.weather[0].icon,
+            sunrise: result.data.sys.sunrise,
+            sunset: result.data.sys.sunset,
         });
     }
 
@@ -38,6 +40,18 @@ function Weather(props) {
         setCity(event.target.value);
     }
 
+    // const colorTheme = () => {
+    //     let unix_sunrise = `${sunrise}`;
+    //     let date_sunrise = new Date(unix_sunrise * 1000);
+    //     let hours_sunrise = date.getHours();
+    //     let mins_sunrise = date.getMinutes();
+    //     let time_sunrise = hours_sunrise + ":" + mins_sunrise.substr(-2);
+
+    //     let hours = props.date.getHours();
+    //     let mins = props.date.getMinutes();
+    //     let time = `${hours}:${mins}`;
+    // }
+
     if (weather.ready) {
         return (
             <div className="card">
@@ -55,7 +69,7 @@ function Weather(props) {
                     <WeatherInfo data={weather} />
                 </div>
                 <div className="card-body">
-                <WeatherForecast coordinates={weather.coordinates} />
+                    <WeatherForecast coordinates={weather.coordinates} />
                 </div>
             </div>
         );

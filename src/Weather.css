@@ -3,8 +3,12 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   border-radius: 0 !important;
 }
-.card-header {
+/* .card-header {
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  border-bottom: none !important;
+} */
+.card-header {
+  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   border-bottom: none !important;
 }
 
@@ -40,6 +44,44 @@
 }
 .btn-light:focus {
   box-shadow: none !important;
+}
+
+/* Color theme */
+.day-clear {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+.day-rainy {
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.day-cloudy {
+  background: linear-gradient(to left, #bdbbbe 0%, #9d9ea3 100%),
+    radial-gradient(
+      88% 271%,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(254, 254, 254, 0.25) 1%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    radial-gradient(
+      50% 100%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  background-blend-mode: normal, lighten, soft-light;
+}
+.night-clear {
+  background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+.night-early {
+  background: linear-gradient(
+    to top,
+    #0c3483 0%,
+    #a2b6df 100%,
+    #6b8cce 100%,
+    #a2b6df 100%
+  );
+}
+.night-midnight {
+  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
 }
 
 /* Media screen */
