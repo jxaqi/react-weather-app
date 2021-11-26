@@ -2,3 +2,15 @@
   /* text-align: center; */
   margin-top: 4rem;
 }
+
+footer {
+  color: #2b5876;
+  text-align: center;
+}
+
+.footer {
+  color: #4e4376 !important;
+}
+.footer:hover {
+  color: #2b5876 !important;
+}

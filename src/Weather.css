@@ -87,18 +87,18 @@
 /* Media screen */
 @media only screen and (max-width: 1500px) {
   .card {
-    margin: 3rem 13rem;
+    margin: 3rem 13rem 1.5rem 13rem;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .card {
-    margin: 3rem 2rem;
+    margin: 3rem 2rem 1.5rem 2rem;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .card {
-    margin: 3rem 1rem;
+    margin: 3rem 1rem 1.5rem 1rem;
   }
 }
