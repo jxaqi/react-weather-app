@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# React Weather App
+
+Built with React and Firebase
+
+[Open this link :)](https://weather-app-wa73228.web.app/)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
